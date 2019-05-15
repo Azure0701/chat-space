@@ -10,8 +10,8 @@
 | email | string | unique: true, null: false |
   
 #### Association
-* has_many :group_users
-* has_many :group, through: :group_users
+* has_many :groups_users
+* has_many :group, through: :groups_users
 * has_many :messages
   
 
@@ -20,11 +20,11 @@
   
 | Column | Type | Options |
 | ------ | ---- | ------- |
-| group_name | string | add_index: true, null: false |
+| name | string | add_index: true, null: false |
   
 #### Association
-* has_many :group_users
-* has_many :users, through: :group_users
+* has_many :groups_users
+* has_many :users, through: :groups_users
 * has_many :messages
   
 
@@ -33,8 +33,8 @@
   
 | Column | Type | Options |
 | ------ | ---- | ------- |
-| user_id | integer | foreignkey: true, null: false |
-| group_id | integer | foreignkey: true, null: false |
+| user_id | references | foreignkey: true, null: false |
+| group_id | references | foreignkey: true, null: false |
   
 #### Association
 * belongs_to :user
@@ -46,10 +46,10 @@
   
 | Column | Type | Options |
 | ------ | ---- | ------- |
-| body | text | null: false |
+| body | text | |
 | image | string | |
-| user_id | integer | foreignkey: true, null: false |
-| group_id | integer | foreignkey: true, null: false |
+| user_id | references | foreignkey: true, null: false |
+| group_id | references | foreignkey: true, null: false |
   
 #### Association
 * belongs_to :user
