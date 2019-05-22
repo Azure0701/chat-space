@@ -1,69 +1,56 @@
-.flash-box
-  .notice
-    %p グループを作成しました
 .wrapper
-  .side-content
-    .side-content__header
-      %h5 田沢翔太
-      %i.fa.fa-cog
-      %i.fa.fa-edit
 
-    .side-content__group-content
-      .side-content__group-content--name
-        %p グループ名
-      .side-content__group-content--message
-        %p グループメッセージ
-    
-    .side-content__group-content
-      .side-content__group-content--name
-        %p グループ名
-      .side-content__group-content--message
-        %p グループメッセージ
-    
-    .side-content__group-content
-      .side-content__group-content--name
-        %p グループ名
-      .side-content__group-content--message
-        %p グループメッセージ
-    
-  .main-content
-    .main-content__header
-      .main-content__header--name
-        %h2 グループ名
-        %p Member : 田沢翔太 tazawa shota
-      .main-content__header--edit-btn
-        %p Edit
-    
-    .main-content__chat-content
-      .main-content__chat-content__chat-body
-        .main-content__chat-content__chat-body--name
-          %p 田沢翔太
-        .main-content__chat-content__chat-body--date
-          %p 2019/05/20(Mon) 18:00:00
-        .main-content__chat-content__chat-body--txit
-          %p テキスト1
-      
-      .main-content__chat-content__chat-body
-        .main-content__chat-content__chat-body--name
-          %p tazawa
-        .main-content__chat-content__chat-body--date
-          %p 2019/05/20(Mon) 19:00:00
-        .main-content__chat-content__chat-body--txit
-          %p テキスト2
+  = render 'devise/shared/side_bar'
 
-      .main-content__chat-content__chat-body
-        .main-content__chat-content__chat-body--name
-          %p shota
-        .main-content__chat-content__chat-body--date
-          %p 2019/05/20(Mon) 20:00:00
-        .main-content__chat-content__chat-body--txit
-          %p テキスト3
-      
-    .main-content__footer
-      %textarea{ placeholder: 'type a message'}
-
-      .main-content__footer--image
-        %i.fa.fa-picture-o
-
-      .main-content__footer--send-btn
-        %p Send
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+    .form
+      %form
+        %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
