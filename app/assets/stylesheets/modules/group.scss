@@ -40,6 +40,21 @@
     }
   }
 
+  &__label {
+    display: block;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  &__input {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+
   &__field {
     margin-top: 30px;
     &:after {
@@ -59,21 +74,6 @@
     &--right {
       float: right;
       width: 70%;
-    }
-
-    .chat-group-form__label {
-      display: block;
-      line-height: 50px;
-      font-weight: bold;
-      text-align: right;
-    }
-
-    .chat-group-form__input {
-      float: left;
-      width: 100%;
-      line-height: 30px;
-      padding: 10px 15px;
-      box-sizing: border-box;
     }
   }
 
