@@ -1,6 +1,7 @@
 class Group < ApplicationRecord
   has_many :group_users
-  hass_many :users, through: :group_users
+  has_many :users, through: :group_users
+  has_many :message
   validates :name, presence: true, uniqueness: true
 end
 
