@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.where('name LIkE(?)', "%#{params[:name]}%")
+    @users = User.where('name LIkE(?)', "%#{params[:name]}%").where("id NOT IN (#{current_user.id})")
     respond_to do |format|
       format.html
       format.json
