@@ -57,6 +57,7 @@
 
   &__field {
     margin-top: 30px;
+    
     &:after {
       content: "";
       clear: both;
@@ -82,6 +83,7 @@
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+
     &:after {
       content: "";
       clear: both;
@@ -97,11 +99,11 @@
       display: inline-block;
       cursor: pointer;
 
-      &__btn--add {
+      &--add {
         color: #38aef0;
       }
 
-      &__btn--remove {
+      &--remove {
         color: #f05050;
       }
     }

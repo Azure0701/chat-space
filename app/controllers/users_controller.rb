@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
+  
+  def index
+    @users = User.where('name LIkE(?)', "%#{params[:name]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+  
   def edit
+    @user =User.find(params[:id])
   end
 
   def update
