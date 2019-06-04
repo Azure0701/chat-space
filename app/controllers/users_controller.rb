@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.where('name LIkE(?)', "%#{params[:name]}%").where("id NOT IN (#{current_user.id})")
+    @users = User.where('name LIKE(?) and id != ?', "%#{params[:keyword]}%" ,current_user)
     respond_to do |format|
       format.html
       format.json
@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user =User.find(params[:id])
   end
 
   def update
