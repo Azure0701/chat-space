@@ -46,13 +46,12 @@ $(function() {
   })
 
   if (window.location.href.match(/\/groups\/\d+\/messages/)){
-    setInterval(reloadMessages,4000)
+    setInterval(reloadMessages,5000)
   };
 
   function reloadMessages() {
     var last_message_id = $('.message').last().data('id');
     var href = ('./api/messages');
-    console.log(last_message_id);
     $.ajax({
       type: 'GET',
       url: href,
